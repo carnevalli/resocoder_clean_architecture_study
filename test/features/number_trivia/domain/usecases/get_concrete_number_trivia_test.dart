@@ -30,7 +30,7 @@ void main() {
       .thenAnswer((answer) async => Right(tNumberTrivia));
 
     //The "act" phase of the test. Call the not-yet-existent method.
-    final result = await usecase(number: tNumber);
+    final result = await usecase(Params(number: tNumber));
 
     // Usecase should simply return whatever was returned from the Repository
     expect(result, Right(tNumberTrivia));
